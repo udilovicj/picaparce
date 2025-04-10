@@ -12,9 +12,10 @@ export default function Hero() {
         {/* Base background */}
         <div className="absolute inset-0 bg-zinc-900"></div>
         
-        {/* Enhanced grain texture */}
-        <div className="absolute inset-0 opacity-15 mix-blend-overlay" 
-          style={{ backgroundImage: "url('/grain.png')" }}></div>
+        {/* Enhanced grain texture using CSS */}
+        <div className="absolute inset-0 opacity-15 mix-blend-overlay">
+          <div className="absolute inset-0 [background-image:url('data:image/svg+xml;charset=utf-8,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url%28%23noise%29%22/%3E%3C/svg%3E')] opacity-50"></div>
+        </div>
         
         {/* Modern geometric elements - Adjusted for mobile */}
         <div className="absolute -top-12 sm:-top-24 -left-12 sm:-left-24 w-48 sm:w-96 h-48 sm:h-96 rounded-full bg-amber-500/5 blur-[50px] sm:blur-[100px]"></div>
@@ -70,23 +71,23 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-col xs:flex-row gap-2 sm:gap-3 lg:gap-4 pt-3 sm:pt-4 justify-center lg:justify-start"
+              className="flex flex-row gap-3 pt-3 justify-center lg:justify-start"
             >
               <a
                 href="#menu"
-                className="group relative overflow-hidden rounded-lg bg-amber-500 px-4 sm:px-5 lg:px-6 py-2.5 sm:py-3 lg:py-3.5 text-center font-medium text-zinc-900 shadow-lg shadow-amber-500/20 transition-all hover:shadow-xl hover:shadow-amber-500/30 hover:bg-amber-400"
+                className="group relative overflow-hidden rounded-lg bg-amber-500 px-4 py-2 text-center font-medium text-zinc-900 shadow-lg shadow-amber-500/20 transition-all hover:shadow-xl hover:shadow-amber-500/30 hover:bg-amber-400 min-w-[120px] flex items-center justify-center"
               >
-                <span className="relative z-10 flex items-center justify-center text-sm sm:text-base">
+                <span className="relative z-10 flex items-center justify-center text-sm">
                   <span>Pogledaj meni</span>
-                  <ChevronRight size={16} className="ml-1.5 transition-transform group-hover:translate-x-1" />
+                  <ChevronRight size={14} className="ml-1 transition-transform group-hover:translate-x-1" />
                 </span>
               </a>
               
               <a
                 href="#about"
-                className="group relative overflow-hidden rounded-lg border border-zinc-700 bg-transparent px-4 sm:px-5 lg:px-6 py-2.5 sm:py-3 lg:py-3.5 text-center font-medium text-white transition-all hover:bg-zinc-800"
+                className="group relative overflow-hidden rounded-lg border border-zinc-700 bg-transparent px-4 py-2 text-center font-medium text-white transition-all hover:bg-zinc-800 min-w-[120px] flex items-center justify-center"
               >
-                <span className="text-sm sm:text-base">O nama</span>
+                <span className="text-sm">O nama</span>
               </a>
             </motion.div>
             
